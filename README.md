@@ -41,3 +41,11 @@ After deployment, the application can be accessed in several ways depending on y
 
 For Ingress-based access, ensure this line is added to `/etc/hosts`:
 
+## System Resource Health Monitor
+The first script provides a lightweight way to monitor system performance. It checks CPU load, memory usage, disk space utilization, and running process count. If any resource usage crosses a predefined threshold (such as CPU > 80%), it triggers an alert and records the event in a log file (system_health.log). This allows proactive detection of system stress or overuse.
+
+## Automated Backup Utility
+The second script automates the process of backing up a local directory to a remote server. It compresses the specified folder into a timestamped archive, securely transfers it using scp, and provides a success/failure report after the operation. Temporary files are cleaned up post-transfer. This script helps ensure that daily backups are handled safely and consistently, making it suitable for both manual runs and scheduled execution.
+
+These scripts were written with clarity and portability in mind and demonstrate hands-on scripting for system maintenance and data resilience.
+
